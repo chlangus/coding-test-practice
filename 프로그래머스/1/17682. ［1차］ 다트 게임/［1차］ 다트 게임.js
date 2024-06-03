@@ -1,5 +1,4 @@
 function solution(dartResult) {
-    let answer = 0;
     let answerArray = []; // 정답 배열, 앞의 결과에 * 2 해주기 위함
     let temp; // 현재 결과
     // S,D,T 판별
@@ -30,7 +29,7 @@ function solution(dartResult) {
         }
     }
     
-    answerArray.forEach((item) => answer += item);
+    const answer = answerArray.reduce((acc, cur) => acc + cur, 0);
     
     return answer;
 }
