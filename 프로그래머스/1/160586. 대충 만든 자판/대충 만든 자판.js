@@ -22,5 +22,6 @@ function solution(keymap, targets) {
             else answer[i] += min;
         }
     }
+    
     return answer;
 }
