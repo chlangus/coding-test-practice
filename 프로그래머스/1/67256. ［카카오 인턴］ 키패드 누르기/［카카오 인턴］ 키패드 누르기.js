@@ -23,11 +23,13 @@ function solution(numbers, hand) {
                 rightCurrent = number;
                 break;
             case 2: case 5: case 8: case 0: 
-                if(getDistance(keypad[leftCurrent], keypad[number]) < getDistance(keypad[rightCurrent], keypad[number])) {
+                const letfDistance = getDistance(keypad[leftCurrent], keypad[number]);
+                const rightDistance = getDistance(keypad[rightCurrent], keypad[number]);
+                if(letfDistance < rightDistance) {
                     answer += 'L';
                     leftCurrent = number;
                 }
-                else if(getDistance(keypad[leftCurrent], keypad[number]) > getDistance(keypad[rightCurrent], keypad[number])) {
+                else if(letfDistance > rightDistance) {
                     answer += 'R';
                     rightCurrent = number;
                 }else {
