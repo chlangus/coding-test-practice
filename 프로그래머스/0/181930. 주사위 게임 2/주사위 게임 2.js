@@ -1,6 +1,10 @@
 function solution(a, b, c) {
     var answer = 0;
-    if(a !== b && b !== c && c !== a) return a + b + c;
-    else if(a === b && a !== c || a === c && a !== b || b === c && a !== b) return (a+b+c)*(a*a+b*b+c*c);
-    else if(a === b && b === c) return (a+b+c)*(a*a+b*b+c*c)*(a*a*a+b*b*b+c*c*c);
+    const sum1 = a+b+c;
+    const sum2 = a**2+b**2+c**2;
+    const sum3 = a**3+b**3+c**3;
+    
+    if(a === b && b === c) return sum1*sum2*sum3;
+    else if(a === b || b === c || c === a) return sum1*sum2;
+    else return sum1;
 }
