@@ -9,11 +9,11 @@ const input = fs
 solution(input);
 
 function solution(input) {
-  let max = 0;
+  let max = -1;
   let index = [0, 0];
   for (let i = 0; i < +input.length; i++) {
     for (let j = 0; j < +input[i].length; j++) {
-      if (+input[i][j] >= max) {
+      if (+input[i][j] > max) {
         index = [i + 1, j + 1];
         max = +input[i][j];
       }
